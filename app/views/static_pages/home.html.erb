@@ -1,5 +1,6 @@
 <header>
     <% if current_user %>
+    <p><%= link_to "ホーム", root_path%></p>
     <p>こんにちわ、<%= current_user.email %></p>
     <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     <% else %>
@@ -10,4 +11,7 @@
     <hr>
 </header>
 <h1>Home Page</h1>
+<% if current_user %>
+ <%= link_to "サインイン", books_path%>
 
+<% end %>
