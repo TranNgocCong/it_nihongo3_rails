@@ -11,8 +11,20 @@
     <% end %>
     <hr>
 </header>
-<h1>Home Page</h1>
-<% if current_user %>
- <%= link_to "本一覧をみる", books_path%>
+<h1>プロフィール</h1>
 
-<% end %>
+<p>
+   <% if @user.avatar.attached? %>
+     <%= image_tag @user.avatar %>
+   <% end %>
+ </p>
+
+<h3>名前</h3>
+<%= @user.name %>
+
+<h3>年齢</h3>
+<%= @user.age %>
+
+
+<h3>メールアドレス</h3>
+<%= @user.email %> 
